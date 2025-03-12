@@ -1,1 +1,70 @@
-[{"title": "Grace", "author": "Mlik", "year": 2025, "genre": "mikl47", "read_status": true}]
+[
+    {
+        "title": "Grace",
+        "author": "Mlik",
+        "year": 2025,
+        "genre": "mikl47",
+        "read_status": true,
+        "read": false
+    },
+    {
+        "title": "work",
+        "author": "sha",
+        "year": 456,
+        "genre": "njkd",
+        "read_status": true,
+        "read": false
+    },
+    {
+        "title": "work",
+        "author": "sha",
+        "year": 456,
+        "genre": "njkd",
+        "read_status": true,
+        "read": false
+    },
+    {
+        "title": "work",
+        "author": "",
+        "year": 15,
+        "genre": "",
+        "read_status": true,
+        "read": false
+    },
+    {
+        "title": "work",
+        "author": "",
+        "year": 15,
+        "genre": "",
+        "read_status": false,
+        "read": false
+    },
+    {
+        "title": "python",
+        "author": "zia",
+        "year": 15,
+        "genre": "ds5s",
+        "read": false
+    },
+    {
+        "title": "ai",
+        "author": "zia",
+        "year": 125,
+        "genre": "d5d",
+        "read": false
+    },
+    {
+        "title": "nj",
+        "author": "njk",
+        "year": 25,
+        "genre": "nk4",
+        "read": true
+    },
+    {
+        "title": ",km",
+        "author": "nl",
+        "year": 56,
+        "genre": "nk4",
+        "read": false
+    }
+]

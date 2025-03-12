@@ -21,6 +21,7 @@ def save_library(library):
 library = load_library()
 
 st.title("📚 Personal Library Manager")
+
 menu = st.sidebar.selectbox("Menu", ["Add Book", "Remove Book", "Search Book", "Display All Books", "Statistics"])
 
 if menu == "Add Book":
@@ -35,6 +36,7 @@ if menu == "Add Book":
         library.append({"title": title, "author": author, "year": year, "genre": genre, "read_status": read_status})
         save_library(library)
         st.success(f"Book '{title}' added successfully!")
+        
 
 elif menu == "Remove Book":
     st.subheader("Remove a Book")

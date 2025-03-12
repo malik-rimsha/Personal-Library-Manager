@@ -2,37 +2,47 @@ import os
 import json
 
 # File name to save the library
-data_file = "library.json"
+DATA_FILE = "library.json"
 
 # Load library from a file
 def load_library():
-    if os.path.exists(data_file):
-        with open(data_file, "r") as file:
-            return json.load(file)
+    if os.path.exists(DATA_FILE):
+        with open(DATA_FILE, "r") as file:
+            library = json.load(file)
+        # Ensure all books have the 'read' field
+        for book in library:
+            if "read" not in book:
+                book["read"] = False
+        return library
     return []
 
 # Save library to a file
 def save_library(library):
-    with open(data_file, "w") as file:
+    with open(DATA_FILE, "w") as file:
         json.dump(library, file, indent=4)
 
 # Add a book
 def add_book(library):
     title = input("Enter the book title: ")
     author = input("Enter the author: ")
-    year = int(input("Enter the publication year: "))
+    try:
+        year = int(input("Enter the publication year: "))
+    except ValueError:
+        print("Invalid year. Please enter a valid number.")
+        return
     genre = input("Enter the genre: ")
-    read_status = input("Have you read this book? (yes/no): ").strip().lower() == "yes"
+    read_input = input("Have you read this book? (yes/no): ").strip().lower()
+    read_status = read_input in ["yes", "y"]  # Check for both "yes" and "y"
 
     book = {
         "title": title,
         "author": author,
         "year": year,
         "genre": genre,
-        "read": read_status
+        "read": read_status,
     }
     library.append(book)
-    print("Book added successfully!\n")
+    print("👍🏻Book added successfully!\n")
 
 # Remove a book
 def remove_book(library):
@@ -40,7 +50,7 @@ def remove_book(library):
     for book in library:
         if book["title"].lower() == title.lower():
             library.remove(book)
-            print("Book removed successfully!\n")
+            print("📇Book removed successfully!\n")
             return
     print("Book not found.\n")
 
